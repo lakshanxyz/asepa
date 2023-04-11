@@ -1,7 +1,6 @@
-const { tiktok, tiktok2 } = require('./../../scrape/tiktok')
 exports.run = {
-   usage: ['tiktok', 'tikmp3'],
-   hidden: ['tt', 'tik', 'ttdl'],
+   usage: ['tiktok', 'tikmp3', 'tikwm'],
+   hidden: ['tt'],
    use: 'link',
    category: 'downloader',
    async: async (m, {
@@ -10,12 +9,12 @@ exports.run = {
       isPrefix,
       command
    }) => {
-   	try {
-         if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'https://vt.tiktok.com/ZS8CdhRnb/'), m)
+      try {
+         if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'https://vm.tiktok.com/ZSR7c5G6y/'), m)
          if (!args[0].match('tiktok.com')) return client.reply(m.chat, global.status.invalid, m)
          client.sendReact(m.chat, '🕒', m.key)
          let old = new Date()
-         let json = await tiktok(Func.ttFixed(args[0]))
+         let json = await Api.tiktok(Func.ttFixed(args[0]))
          if (Object.keys(json).length < 1) return client.reply(m.chat, global.status.fail, m)
          let caption = `⦿ *Tiktok - Download*\n\n`
          caption += `	◦  *Sound* : ${json.title_audio}\n`
