@@ -13,7 +13,7 @@ exports.run = {
       try {
          if (!text) return client.reply(m.chat, Func.example(isPrefix, command, 'lathi'), m)
          client.sendReact(m.chat, '🕒', m.key)
-         const json = await Api.play(text)
+         const json = await Func.fetchJson('https://alyachan.my.id/api/yta?url=' +play(text)
          if (!json.status || !json.data.url) return client.reply(m.chat, global.status.fail, m)
          let caption = `乂  *Y T - P L A Y*\n\n`
          caption += `	◦  *Title* : ${json.title}\n`
