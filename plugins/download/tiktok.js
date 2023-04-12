@@ -17,7 +17,7 @@ exports.run = {
          let old = new Date()
          let json = await tiktok(Func.ttFixed(args[0]))
          if (Object.keys(json).length < 1) return client.reply(m.chat, global.status.fail, m)
-         let caption = `⦿ *Tiktok - Download*\n\n`
+         let caption = `乂 *Tiktok - Download*\n\n`
          caption += `	◦  *Sound* : ${json.title_audio}\n`
          caption += `	◦  *Fetching* : ${((new Date - old) * 1)} ms\n\n`
          caption += global.footer
