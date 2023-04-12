@@ -10,7 +10,7 @@ exports.run = {
    }) => {
       try {
          if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'https://open.spotify.com/track/6cHCixTkEFATjcu5ig8a7I'), m)
-         client.sendReact(m.chat, '🕒', m.key)
+         client.sendReact(m.chat, '💙', m.key)
          var json = await Api.spotify(args[0])
          if (!json.status) return client.reply(m.chat, Func.jsonFormat(json), m)
          if (/track/.test(args[0])) {
