@@ -27,10 +27,11 @@ exports.run = {
          if (chSize.oversize) return client.reply(m.chat, ` File size (${json.data.size}) is too large, download it by yourself via this link : ${await (await Api.tinyurl(json.data.url)).data}`, m)
          client.sendMessageModify(m.chat, caption, m, {
             largeThumb: true,
-            thumbnail: await Func.fetchBuffer(json.thumbnail)
+            thumbnail: await Func.fetchBuffer(json.thumbnail),
+            url: global.db.setting.link
          }).then(async () => {
             client.sendFile(m.chat, json.data.url, json.data.filename, '', m, {
-               document: true,
+               document: false,
                APIC: await Func.fetchBuffer(json.thumbnail)
             })
          })
