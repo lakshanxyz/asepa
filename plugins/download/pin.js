@@ -16,7 +16,7 @@ exports.run = {
          client.sendReact(m.chat, '🕒', m.key)
          let old = new Date()
          let json = await pindl(args[0])
-         let caption = `⦿  *Pinterest - Download*\n\n`
+         let caption = `乂  *Pinterest - Download*\n\n`
          caption += `	◦  *Full Name* : ${json.full_name}\n`
          caption += `	◦  *User Name* : ${json.user_name}\n`
          caption += `	◦  *Followers* : ${json.followers}\n`
