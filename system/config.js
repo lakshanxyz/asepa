@@ -26,9 +26,9 @@ global.timezone = 'Asia/Jakarta'
 // Bot version
 global.version = '2.2.2',
 // Bot name
-global.botname = `© Api+bot v${global.version} (Public Bot)`
+global.botname = `© Winterasepa bot v${global.version} (Public Bot)`
 // Footer text
-global.footer = '_Simple Bot made my Lakshan.us...!_'
+global.footer = '_ Simple Bot made by Lakshan.us...! 🍓_'
 // Scraper
 global.scrap = Scraper
 // Function
