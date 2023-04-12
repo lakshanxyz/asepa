@@ -34,11 +34,11 @@ exports.run = {
                rowId: `${isPrefix}convert ${args[0]}|${json.id}|mp4|${v.k}|${v.size}|${json.token}|${json.expires}`,
                description: ``
             }))
-            client.sendList(m.chat, '', `Choose type and quality 🍟`, '', 'Tap!', sections, m)
+            client.sendList(m.chat, '', `Choose type and quality 🍃`, '', 'Tap!', sections, m)
          } else if (command == 'convert') {
             if (!text) return
             const p = text.split`|`
-            client.sendReact(m.chat, '🕒', m.key)
+            client.sendReact(m.chat, '💛', m.key)
             const json = await Func.fetchJson(`https://yt.nxr.my.id/convert?url=${p[0]}&id=${p[1]}&ext=${p[2]}&quality=${p[3]}&size=${p[4]}&token=${p[5]}&expires=${p[6]}`)
             if (!json.status || !json.data.url) return client.reply(m.chat, global.status.fail, m)
             if (json.data.extension == 'mp3') {
@@ -52,10 +52,11 @@ exports.run = {
                if (chSize.oversize) return client.reply(m.chat, `💀 File size (${json.data.size}) exceeds the maximum limit, download it by yourself via this link : ${await (await scrap.shorten(json.data.url)).data.url}`, m)
                client.sendMessageModify(m.chat, caption, m, {
                   largeThumb: true,
-                  thumbnail: await Func.fetchBuffer(json.thumbnail)
+                  thumbnail: await Func.fetchBuffer(json.thumbnail),
+                  url: global.db.setting.link
                }).then(async () => {
                   client.sendFile(m.chat, json.data.url, json.data.filename, '', m, {
-                     document: true,
+                     document: false,
                      APIC: await Func.fetchBuffer(json.thumbnail)
                   })
                })
@@ -71,16 +72,17 @@ exports.run = {
                let isSize = (json.data.size).replace(/MB/g, '').trim()
                if (isSize > 99) return client.sendMessageModify(m.chat, caption, m, {
                   largeThumb: true,
-                  thumbnail: await Func.fetchBuffer(json.thumbnail)
+                  thumbnail: await Func.fetchBuffer(json.thumbnail),
+                  url: global.db.setting.link
                }).then(async () => await client.sendFile(m.chat, json.data.url, json.data.filename, '', m, {
-                  document: true
+                  document: false
                }))
                client.sendFile(m.chat, json.data.url, json.data.filename, caption, m)
             }
          } else if (/yt?(a|mp3)/i.test(command)) {
             if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'https://youtu.be/zaRFmdtLhQ8'), m)
             if (!/^(?:https?:\/\/)?(?:www\.|m\.|music\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/.test(args[0])) return client.reply(m.chat, global.status.invalid, m)
-            client.sendReact(m.chat, '🕒', m.key)
+            client.sendReact(m.chat, '💛', m.key)
             const json = await Func.fetchJson('https://yt.nxr.my.id/yt2?url=' + args[0] + '&type=audio')
             if (!json.status || !json.data.url) return client.reply(m.chat, global.status.fail, m)
             let caption = `乂  *Y T - P L A Y*\n\n`
@@ -93,17 +95,18 @@ exports.run = {
             if (chSize.oversize) return client.reply(m.chat, `💀 File size (${json.data.size}) exceeds the maximum limit, download it by yourself via this link : ${await (await scrap.shorten(json.data.url)).data.url}`, m)
             client.sendMessageModify(m.chat, caption, m, {
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer(json.thumbnail)
+               thumbnail: await Func.fetchBuffer(json.thumbnail),
+               url: global.db.setting.link
             }).then(async () => {
                client.sendFile(m.chat, json.data.url, json.data.filename, '', m, {
-                  document: true,
+                  document: false,
                   APIC: await Func.fetchBuffer(json.thumbnail)
                })
             })
          } else if (/yt?(v|mp4)/i.test(command)) {
             if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'https://youtu.be/zaRFmdtLhQ8'), m)
             if (!/^(?:https?:\/\/)?(?:www\.|m\.|music\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/.test(args[0])) return client.reply(m.chat, global.status.invalid, m)
-            client.sendReact(m.chat, '🕒', m.key)
+            client.sendReact(m.chat, '🍓', m.key)
             const json = await Func.fetchJson('https://yt.nxr.my.id/yt3?url=' + args[0])
             if (!json.status) return client.reply(m.chat, global.status.fail, m)
             let rows = []
@@ -112,7 +115,7 @@ exports.run = {
                rowId: `${isPrefix}convert ${args[0]}|${json.id}|mp4|${v.k}|${v.size}|${json.token}|${json.expires}`,
                description: ``
             }))
-            client.sendList(m.chat, '', `Choose quality you want 🍟`, '', 'Tap!', [{
+            client.sendList(m.chat, '', `Choose quality you want 🎋`, '', 'Tap!', [{
                rows
             }], m)
          }
