@@ -22,7 +22,7 @@ exports.run = {
                displayText: ''
             },
             type: 1
-         }])
+         }]
          if (command == 'tikwm') return client.sendButton(m.chat, json.data.videoWM, `If you want to get the *original sound* press the button below.\n🍟 *Fetching* : ${((new Date - old) * 1)} ms`, ``, m, [{
             buttonId: `${isPrefix}tikmp3 ${args[0]}`,
             buttonText: {
