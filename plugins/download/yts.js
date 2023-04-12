@@ -12,7 +12,7 @@ exports.run = {
    }) => {
       try {
          if (!text) return client.reply(m.chat, Func.example(isPrefix, command, 'lathi'), m)
-         client.sendReact(m.chat, '🕒', m.key)
+         client.sendReact(m.chat, '💛', m.key)
          const search = await (await yts(text)).all
          if (!search || search.length == 0) return client.reply(m.chat, global.status.fail, m)
          let rows = []
@@ -21,7 +21,7 @@ exports.run = {
             rowId: `${isPrefix}yt ${v.url}`,
             description: ``
          }))
-         client.sendList(m.chat, '', `Showing search results for : “${text}”, select below the title you want to download. 🍟`, '', 'Tap!', [{
+         client.sendList(m.chat, '', `Showing search results for : “${text}”, select below the title you want to download. 🎋`, '', 'Tap!', [{
             rows
          }], m)
       } catch (e) {
