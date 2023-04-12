@@ -17,7 +17,7 @@ exports.run = {
          //if (!srch || srch.length == 0) return client.reply(m.chat, global.status.fail, m)
          const json = await Func.fetchJson('https://yt.nxr.my.id/yt2?url=https://youtu.be/' + srch[0].videoId + '&type=audio')
          if (!json.status || !json.data.url) return client.reply(m.chat, global.status.fail, m)
-         let caption = `⦿  *Y T - P L A Y*\n\n`
+         let caption = `乂  *Y T - P L A Y*\n\n`
          caption += `	◦  *Title* : ${json.title}\n`
          caption += `	◦  *Size* : ${json.data.size}\n`
          caption += `	◦  *Duration* : ${json.duration}\n`
