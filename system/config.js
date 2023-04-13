@@ -28,7 +28,7 @@ global.version = '2.2.2',
 // Bot name
 global.botname = `© Winterasepa bot v${global.version} (Public Bot)`
 // Footer text
-global.footer = '_ Simple Bot made by Lakshan.us...! 🍓_'
+global.footer = '_Simple Bot made by Lakshan.us...! 🍓_'
 // Scraper
 global.scrap = Scraper
 // Function
