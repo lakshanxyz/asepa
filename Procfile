@@ -1,1 +1,1 @@
-worker: npm i -g pm2 && pm2 start node . && pm2 logs
+npm install pm2 -g && pm2 install pm2-logrotate
