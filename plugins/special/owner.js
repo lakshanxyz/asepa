@@ -7,7 +7,7 @@ exports.run = {
             const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
             + `FN:${global.owner_name}\n`// full name
-            + 'ORG:Ashoka Uni;\n' // the organization of the contact
+            + 'ORG:Asepa organization;\n' // the organization of the contact
             + `TEL;type=CELL;type=VOICE;waid=${global.owner}:+94726083178\n` // WhatsApp ID + phone number
             + 'END:VCARD'
 const dt = await client.sendMessage(
@@ -19,7 +19,7 @@ const dt = await client.sendMessage(
         },
         contextInfo: {
           externalAdReply: {
-            title: "_Foolow us_!",
+            title: "",
             body: "Special thanks for ditzzsxz_",
             mediaType: 1,
             mediaUrl: "https://www.instagram.com/lakshan.o_o",
