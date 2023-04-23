@@ -14,7 +14,7 @@ exports.run = {
       try {
          if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'https://fb.watch/7B5KBCgdO3'), m)
          if (!args[0].match(/(?:https?:\/\/(web\.|www\.|m\.)?(facebook|fb)\.(com|watch)\S+)?$/)) return client.reply(m.chat, global.status.invalid, m)
-         client.sendReact(m.chat, '💚', m.key)
+         client.sendReact(m.chat, '🕒', m.key)
          let old = new Date()
          let json = await fbdl(args[0])
       //if (!json.status) return client.reply(m.chat, Func.jsonFormat(json), m)
