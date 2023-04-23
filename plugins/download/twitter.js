@@ -12,7 +12,7 @@ exports.run = {
       try {
          if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'https://twitter.com/mosidik/status/1475812845249957889?s=20'), m)
          if (!args[0].match(/(twitter.com)/gi)) return client.reply(m.chat, global.status.invalid, m)
-         client.sendReact(m.chat, '💖', m.key)
+         client.sendReact(m.chat, '🕒', m.key)
          let json = await Api.twitter(args[0])
          let old = new Date()
          if (!json.status) return client.reply(m.chat, Func.jsonFormat(json), m)
