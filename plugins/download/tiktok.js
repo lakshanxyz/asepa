@@ -13,7 +13,7 @@ exports.run = {
    	try {
          if (!args || !args[0]) return client.reply(m.chat, Func.example(isPrefix, command, 'https://vt.tiktok.com/ZS8CdhRnb/'), m)
          if (!args[0].match('tiktok.com')) return client.reply(m.chat, global.status.invalid, m)
-         client.sendReact(m.chat, '💚', m.key)
+         client.sendReact(m.chat, '🕒', m.key)
          let old = new Date()
          let json = await tiktok(Func.ttFixed(args[0]))
          if (Object.keys(json).length < 1) return client.reply(m.chat, global.status.fail, m)
