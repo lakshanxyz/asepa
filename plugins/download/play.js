@@ -12,7 +12,7 @@ exports.run = {
    }) => {
       try {
          if (!text) return client.reply(m.chat, Func.example(isPrefix, command, 'lathi'), m)
-         client.sendReact(m.chat, '💛', m.key)
+         client.sendReact(m.chat, '🕒', m.key)
          const srch = await search(text)
          //if (!srch || srch.length == 0) return client.reply(m.chat, global.status.fail, m)
          const json = await Func.fetchJson('https://yt.nxr.my.id/yt2?url=https://youtu.be/' + srch[0].videoId + '&type=audio')
