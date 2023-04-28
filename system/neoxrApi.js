@@ -1,6 +1,6 @@
 module.exports = class NeoxrApi {
-   baseUrl = 'https://api.neoxr.my.id/api'
-   base = 'https://api.neoxr.my.id/api'
+   baseUrl = 'https://alyachan.my.id/api'
+   base = 'https://alyachan.my.id/api'
    apiKey = null
 
    constructor(apiKey) {
@@ -47,7 +47,7 @@ module.exports = class NeoxrApi {
 
    pin = async (url) => {
 	  let base = 'https://alyachan.my.id/api'
-      let json = await Func.fetchJson(this.baseUrl + '/pin?url=' + url)
+      let json = await Func.fetchJson(this.baseUrl + '/pins?url=' + url)
       return json
    }
 
