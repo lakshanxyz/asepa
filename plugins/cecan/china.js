@@ -1,8 +1,8 @@
 exports.run = {
-  usage: ["cecan"],
+  usage: ["china"],
   hidden: ["china"],
   use: "word",
-  category: "utilities",
+  category: "cecan",
   async: async (m, { client, args, isPrefix, command, participants }) => {
     try {
       client.sendReact(m.chat, "🕒", m.key);
