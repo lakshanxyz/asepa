@@ -27,13 +27,12 @@ exports.run = {
                links.map(async link => {
                   let json = await mediafire2(link)
                 //if (!json.status) return client.reply(m.chat, Func.jsonFormat(json), m)
-                  let text = `⦿  *M E D I A F I R E*\n\n`
+                  let text = `乂  *M E D I A F I R E*\n\n`
          text += '	◦  *Name* : ' + unescape(decode(json.filename)) + '\n'
          text += '	◦  *Size* : ' + json.size + '\n'
          text += '	◦  *Title* : ' + json.title + '\n'
          text += '	◦  *Published* : ' + json.published + '\n'
          text += '	◦  *Mime* : ' + json.mime + '\n'
-         text += `	◦  *Url* : ${await (await Api.tinyurl(json.url)).data}\n`
          text += `	◦  *Fetching* : ${((new Date - old) * 1)} ms\n\n`
          text += global.footer
          let chSize = Func.sizeLimit(json.size, global.max_upload)
