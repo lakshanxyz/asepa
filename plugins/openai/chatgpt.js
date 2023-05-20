@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 exports.run = {
   usage: ["chatgpt"],
   hidden: ["gpt"],
@@ -5,13 +7,12 @@ exports.run = {
   category: "utilities",
   async: async (m, { client, text, isPrefix, command }) => {
     try {
-     if (!text) return client.reply(m.chat, Func.example(isPrefix, command, 'who are you?'), m)
+      if (!text) return client.reply(m.chat, Func.example(isPrefix, command, 'who are you'), m)
       client.sendReact(m.chat, "🕒", m.key);
-      let old = new Date();
-      let perintah = `Hi I am automative ai feature of asepa bot created by Lakshan.us, Alya uhuy and Tioxd coders help to fix this code! 💐.`;
-      let json = await (await require('axios').get(`https://botcahx.cyclic.app/openai?logic=${perintah}&prompt=${text}`)).data;
+      const response = await fetch(`https://botcahx.cyclic.app/openai?text=${text}`);
+      const json = await response.json();
       if (!json.result) return m.reply(json);
-      await m.reply(json.hasil);
+      await m.reply(json.result);
     } catch (e) {
       console.log(e);
       return client.reply(m.chat, global.status.error, m);
