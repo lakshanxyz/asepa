@@ -19,7 +19,7 @@ exports.run = {
          if (Object.keys(json).length < 1) return client.reply(m.chat, global.status.fail, m)
          let caption = `乂 *Tiktok - Download*\n\n`
          caption += `	◦  *Sound* : ${json.title_audio}\n`
-         caption += `	◦  * 💐Fetching* : ${((new Date - old) * 1)} ms\n\n`
+         caption += `	◦  *Fetching* : ${((new Date - old) * 1)} ms\n\n`
          caption += global.footer
          if (command == 'tiktok' || command == 'tt') return client.sendMessage(m.chat, { video: { url: json.video[0] }, caption: caption }, { quoted: m })
          //client.sendFile(m.chat, json.video[0], '', caption, m)
