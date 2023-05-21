@@ -4,7 +4,7 @@ exports.run = {
     usage: ['ytsearch'],
     hidden: ['yts'],
     use: 'query',
-    category: 'features',
+    category: 'download',
     async: async (m, {
        client,
        text,
