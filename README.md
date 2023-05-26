@@ -1,4 +1,4 @@
-### 乂  my rest api's
+### 乂 rest api's
 
 https://restapi.zeynnnn.repl.co/
 ###
