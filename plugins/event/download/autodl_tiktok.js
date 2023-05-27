@@ -25,7 +25,7 @@ exports.run = {
                Func.hitstat('tiktok', m.sender)
                links.map(async link => {
                   let json = await tiktok(Func.ttFixed(link))
-                  let caption = `⦿ *Tiktok - Download*\n\n`
+                  let caption = `乂 *Tiktok - Download*\n\n`
 
          caption += `	◦  *Sound* : ${json.title_audio}\n`
 
