@@ -12,6 +12,11 @@ module.exports = class NeoxrApi {
       return json
    }
    
+   tinyurl = async (url) => {
+   	let json = await axios.get(`https://tinyurl.com/api-create.php?url=${url}`)
+   return json
+  }	
+	
    podcast = async (url) => {
 	  let base = 'https://api.alyachan.my.id/api/'
       let json = await Func.fetchJson(this.baseUrl + '/podcast?url=' + url)
