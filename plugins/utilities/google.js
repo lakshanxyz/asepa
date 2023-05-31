@@ -14,7 +14,7 @@ exports.run = {
          client.sendReact(m.chat, '🕒', m.key)
          if (command == 'google') {
 let json = await googleIt({ 'query': text })
-let caption = `⦿  *G O O G L E - S E A R C H*\n\n`
+let caption = ``乂  *G O O G L E - S E A R C H*\n\n`
 				for (let i = 0; i < json.length; i++) {
 caption += `	◦  *Title* : ${json[i].title}\n`
 caption += `	◦  *Desc* : ${json[i].snippet}\n`
