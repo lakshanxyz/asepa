@@ -9,7 +9,7 @@ exports.run = {
     try {
       if (!text) return client.reply(m.chat, Func.example(isPrefix, command, 'presiden Indonesia'), m)
       client.sendReact(m.chat, "🕒", m.key);
-      const response = await fetch(`https://sh.xznsenpai.xyz/api/openai?text=${text}`);
+      const response = await fetch(`https://mfarels.my.id/api/openai?text=${text}`);
       const json = await response.json();
       if (!json.result) return m.reply(json);
       await m.reply(json.result);
