@@ -1,6 +1,6 @@
 module.exports = class NeoxrApi {
-   baseUrl = 'https://api.alyachan.my.id/api/'
-   base = 'https://api.alyachan.my.id/api/'
+   baseUrl = ''
+   base = ''
    apiKey = null
 
    constructor(apiKey) {
@@ -18,25 +18,25 @@ module.exports = class NeoxrApi {
   }	
 	
    podcast = async (url) => {
-	  let base = 'https://api.alyachan.my.id/api/'
+	  let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/podcast?url=' + url)
       return json
    }
    
    fb = async (url) => { 
-      let base = 'https://api.alyachan.my.id/api/'
+      let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/fb?url=' + url)
       return json
    }
 
    ig = async (url) => {
-      let base = 'https://api.alyachan.my.id/api/'	   
+      let base = ''	   
       let json = await Func.fetchJson(this.baseUrl + '/ig?url=' + url)
       return json
    }
 
    igs = async (url) => {
-	  let base = 'https://api.alyachan.my.id/api/'
+	  let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/igstory?url=' + url)
       return json
    }
@@ -52,31 +52,31 @@ module.exports = class NeoxrApi {
    }
 
    pin = async (url) => {
-	  let base = 'https://api.alyachan.my.id/api/'
+	  let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/pin?url=' + url)
       return json
    }
 
    mediafire = async (url) => { 
-      let base = 'https://api.alyachan.my.id/api/'
+      let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/mediafirev2?url=' + url)
       return json
    }
 
    tiktok = async (url) => {
-	  let base = 'https://api.alyachan.my.id/api/'
+	  let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/tiktok?url=' + url)
       return json
    }
 
    twitter = async (url) => {
-	  let base = 'https://api.alyachan.my.id/api/'
+	  let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/twitter?url=' + url)
       return json
    }
 
    soundcloud = async (url) => {
-	  let base = 'https://api.alyachan.my.id/api/'
+	  let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/soundcloud?url=' + url)
       return json
    }
@@ -87,13 +87,13 @@ module.exports = class NeoxrApi {
    }
    
    pinterest = async (query) => {
-	  let base = 'https://api.alyachan.my.id/api/'
+	  let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/pinterest?q=' + query)
       return json
    }
    
    soundcloud = async (str) => {
-	  let base = 'https://api.alyachan.my.id/api/'
+	  let base = ''
       let json = str.match('soundcloud.com') ? await Func.fetchJson(this.baseUrl + '/soundcloud?url=' + str + '&apikey=' + this.apiKey) : await Func.fetchJson(this.baseUrl + '/soundcloud-search?q=' + str + '&apikey=' + this.apiKey)
       return json
    }
@@ -114,7 +114,7 @@ module.exports = class NeoxrApi {
    }
    
    wallpaper = async (query) => {
-	  let base = 'https://api.alyachan.my.id/api/'
+	  let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/googlesearchimage?q=' + query)
       return json
    }
@@ -163,7 +163,7 @@ module.exports = class NeoxrApi {
    }
    
    lyric = async (query) => {
-	  let base = 'https://api.alyachan.my.id/api/'
+	  let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/lirik?q=' + query)
       return json
    }
@@ -244,13 +244,13 @@ module.exports = class NeoxrApi {
    }
    
    spotify = async (url) => {
-	  let base = 'https://alyachan.my.id/api'
+	  let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/spotify?url=' + url)
       return json
    }
    
    play = async (query) => {
-	  let base = 'https://api.alyachan.my.id/api/'
+	  let base = ''
       let json = await Func.fetchJson(this.baseUrl + '/play?q=' + query)
       return json
    }
